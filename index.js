@@ -240,7 +240,7 @@ async function serverData({
 
 
 setTimeout(()=>{
-    if(window.location.href == "https://www.mabe.cl/MLC-1735077246-secadora-electrica-10kg-blanca-mabe-sem101bdby-_JM#position=1&search_layout=stack&type=item&tracking_id=8c56e93b-e28d-4692-843a-f5cb5ecebaf2"){
+    if(window.location.href == "https://www.mabe.cl/MLC-1735077246-secadora-electrica-10kg-blanca-mabe-sem101bdby-_JM"){
     MudiExperience({
                  tokenApi: 'FuPsXyB2khe9WF2EUBs7',
                  skuNumber:3106380019,

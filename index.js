@@ -240,9 +240,10 @@ async function serverData({
 
 
 setTimeout(()=>{
+    window.location.href.includes('secadora-electrica-10kg-blanca-mabe-sem101bdby') && 
     MudiExperience({
                  tokenApi: 'FuPsXyB2khe9WF2EUBs7',
-                 skuNumber: 3106380019,
+                 skuNumber:'SEM101BDBY',
                  idCompanyMudi: 403,
                  color: '#cf2928',
                  containerBtns: document.querySelector('.ui-pdp-gallery'),

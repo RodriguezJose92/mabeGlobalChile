@@ -182,15 +182,15 @@ async function serverData({
       sistemaOperativo: OSdevice
     });
   
-    /** Evento de intención de compra */
-    document.querySelector('[data-button-action="add-to-cart"]').addEventListener('click', () => {
-      dataLayer.push({
-        event: 'Evento de intención de compra Mudi',
-        valorMudi: 1,
-        sku: sku,
-        sistemaOperativo: OSdevice
-      })
-    }, false);
+    // /** Evento de intención de compra */
+    // document.querySelector('[data-button-action="add-to-cart"]').addEventListener('click', () => {
+    //   dataLayer.push({
+    //     event: 'Evento de intención de compra Mudi',
+    //     valorMudi: 1,
+    //     sku: sku,
+    //     sistemaOperativo: OSdevice
+    //   })
+    // }, false);
   
   
     /** Evento de interación AR Mudi */
@@ -240,10 +240,10 @@ async function serverData({
 
 
 setTimeout(()=>{
-    if(window.location.href= "https://www.mabe.cl/MLC-1735077246-secadora-electrica-10kg-blanca-mabe-sem101bdby-_JM#position=1&search_layout=stack&type=item&tracking_id=8c56e93b-e28d-4692-843a-f5cb5ecebaf2"){
+    if(window.location.href == "https://www.mabe.cl/MLC-1735077246-secadora-electrica-10kg-blanca-mabe-sem101bdby-_JM#position=1&search_layout=stack&type=item&tracking_id=8c56e93b-e28d-4692-843a-f5cb5ecebaf2"){
     MudiExperience({
                  tokenApi: 'FuPsXyB2khe9WF2EUBs7',
-                 skuNumber:'SEM101BDBY',
+                 skuNumber:3106380019,
                  idCompanyMudi: 403,
                  color: '#cf2928',
                  containerBtns: document.querySelector('.ui-pdp-gallery'),

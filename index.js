@@ -172,10 +172,21 @@ const verify = new URLSearchParams(window.location.search).get('muditest')
 
 verify && 
 setTimeout(()=>{
+    let skuNumberPage ;
+
+    const 
+    elements = document.body.querySelectorAll('.andes-table__row.ui-vpp-striped-specs__row');
+    for(let i = 0; i< elements.length; i++){
+        const title = elements[i].querySelector('.andes-table__header__container').innerHTML;
+        if(elements[i].querySelector('.andes-table__header__container')){
+            title == 'Modelo' && (skuNumberPage = elements[i].querySelector('.andes-table__column--value').innerHTML);
+        }
+    }
+
     mudiExperience({
-        skuNumber:document.body.querySelectorAll('.andes-table__column--value')[1].innerHTML+"_MabeChile",
+        skuNumber:skuNumberPage+'_MabeChile',
         fatherContainer: document.body.querySelector(`#gallery`)
     });
-    console.log('Experiencia Mudi realizada')
-},2000)
+
+},1000)
 

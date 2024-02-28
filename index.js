@@ -157,7 +157,7 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
     const 
     dataServer = await conectServer(skuNumber);
-    console.log(dataServer)
+
     
     if(!dataServer){
         console.warn(`El SKU ${skuNumber} No posee experiencias de 3D y realidad aumentada`)
@@ -166,6 +166,10 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
     createStyles();
     createButon( fatherContainer ); 
+    dataLayer.push({
+        event: "visualizacionMudi",
+        valorMudi: "1"
+    });  
 };
 
 const verify = new URLSearchParams(window.location.search).get('muditest')

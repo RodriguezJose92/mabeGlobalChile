@@ -170,8 +170,12 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
 const verify = new URLSearchParams(window.location.search).get('muditest')
 
-verify && mudiExperience({
-    skuNumber:document.body.querySelectorAll('.andes-table__column--value')[1].innerHTML+"_MabeChile",
-    fatherContainer: document.body.querySelector(`#gallery`)
-});
+verify && 
+setTimeout(()=>{
+    mudiExperience({
+        skuNumber:document.body.querySelectorAll('.andes-table__column--value')[1].innerHTML+"_MabeChile",
+        fatherContainer: document.body.querySelector(`#gallery`)
+    });
+    console.log('Experiencia Mudi realizada')
+},2000)
 

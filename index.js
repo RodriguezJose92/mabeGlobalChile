@@ -98,6 +98,7 @@ function createModal(){
 
 };
 
+
 function initARDESK(){
 
     if(document.body.querySelector('#containerQR')) {
@@ -153,6 +154,7 @@ function initARDESK(){
     document.body.querySelector('.iframeMudi3D').appendChild(modalMudi)
 };
 
+
 async function mudiExperience({skuNumber,fatherContainer}){
 
     const 
@@ -172,20 +174,11 @@ async function mudiExperience({skuNumber,fatherContainer}){
     });  
 };
 
-const verify = new URLSearchParams(window.location.search).get('muditest')
-let skuNumberPage ;
-
-const 
-elements = document.body.querySelectorAll('.andes-table__row.ui-vpp-striped-specs__row');
-for(let i = 0; i< elements.length; i++){
-    const title = elements[i].querySelector('.andes-table__header__container').innerHTML;
-    if(elements[i].querySelector('.andes-table__header__container')){
-        title == 'Modelo' && (skuNumberPage = elements[i].querySelector('.andes-table__column--value').innerHTML);
-    }
-}
+const elements1         = document.body.querySelector('.ui-pdp-title').innerHTML.split(" ");
+const finalSKUMabe      = elements1[elements1.length - 1]
 
 mudiExperience({
-    skuNumber:skuNumberPage+'_MabeChile',
+    skuNumber:finalSKUMabe+'_MabeChile',
     fatherContainer: document.body.querySelector(`#gallery`)
 });
 

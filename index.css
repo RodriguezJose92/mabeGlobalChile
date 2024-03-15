@@ -211,7 +211,23 @@
         bottom: 0% !important;
         width: 40%;
     }
+
+    .ContainerBtnsMudi {
+        width: max-content;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 260px;
+        right: 5%;
+    }
+    
 }
+
+
+
+
+
 
 .realidadaumentadaDet {
     display: none;

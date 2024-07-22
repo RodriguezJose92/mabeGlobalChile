@@ -17,7 +17,7 @@
 }
 
 
-.btnMudi3D {
+#btn3DProdId {
     width: 80px !important;
     cursor: pointer;
     -webkit-box-shadow: 10px 10px 33px -18px rgba(0, 0, 0, 0.58);
@@ -214,23 +214,33 @@
         width: 90%;
     }
 
-    .btnMudiAR {
+    .ContainerBtnsMudi{
+        top:0
+    }
+
+    .containerBtnsActions {
         position: absolute;
-        top: 5%;
-        bottom: 0% !important;
         width: 40%;
-    }
-
-    .ContainerBtnsMudi {
-        width: max-content;
-        display: flex;
-        justify-content: center;
         flex-direction: column;
-        position: absolute;
-        top: 260px;
-        right: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 7%;
+        gap: 10%;
+        right: 2%;
     }
 
+    .btnMudiAR {
+        width: 100%;
+    }
+
+    .btn3DAires {
+        width: 100%;
+    }
+
+    #btn3DProdId{
+        width:60px
+    }
 }
 
 .realidadaumentadaDet {

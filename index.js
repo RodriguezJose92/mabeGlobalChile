@@ -183,6 +183,7 @@ mudiExperience({
     skuNumber:finalSKUMabe+'_MabeChile',
     fatherContainer: window.innerWidth < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__col.col-2.ui-pdp--relative`)
 });
+    console.log('Hoooola')
 
     
 },2000)

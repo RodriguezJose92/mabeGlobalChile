@@ -179,7 +179,7 @@ const finalSKUMabe      = document.querySelectorAll('.andes-table__column--value
 
 mudiExperience({
     skuNumber:finalSKUMabe+'_MabeChile',
-    fatherContainer: window.innerHTML < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__col col-2.ui-pdp--relative`)
+    fatherContainer: window.innerHTML < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__col.col-2.ui-pdp--relative`)
 });
 
 

@@ -175,11 +175,11 @@ async function mudiExperience({skuNumber,fatherContainer}){
     });  
 };
 
-const finalSKUMabe      = document.querySelectorAll('.andes-table__column--value')[2].innerHTML
+const finalSKUMabe      = document.querySelectorAll('.andes-table__column--value')[2].innerHTML;
 
 mudiExperience({
     skuNumber:finalSKUMabe+'_MabeChile',
-    fatherContainer: document.body.querySelector(`#gallery`)
+    fatherContainer: window.innerHTML < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__col col-2.ui-pdp--relative`)
 });
 
 

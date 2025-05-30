@@ -1,64 +1,65 @@
 /** Server response */
 let dataServerMudi;
 
-async function conectServer(skuNumber){
+async function conectServer(skuNumber) {
 
     const myBody = {
-        "skus":[skuNumber]
+        "skus": [skuNumber]
     };
 
     try {
 
         /** We make the request to the MUDI server */
-        const 
-        request = await fetch('https://mudiview.mudi.com.co:7443/product/getProductsUrl',{
-            method:'POST',
-            headers:{   "Content-type":"application/json",
-                        "tokenapi":"wa7VmrD6t7oUF2Tcqx9q"
-            },
-            body: JSON.stringify(myBody)
-        })
-        const 
-        response = await request.json();
-        dataServer=response.data[0];   
+        const
+            request = await fetch('https://mudiview.mudi.com.co:7443/product/getProductsUrl', {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/json",
+                    "tokenapi": "wa7VmrD6t7oUF2Tcqx9q"
+                },
+                body: JSON.stringify(myBody)
+            })
+        const
+            response = await request.json();
+        dataServer = response.data[0];
 
-    } catch (error) {console.error(`Mudi Error:\n${error}`)}
-    
+    } catch (error) { console.error(`Mudi Error:\n${error}`) }
+
     return dataServer;
 };
 
-function createStyles(){
+function createStyles() {
     const link = document.createElement('LINK');
-    link.setAttribute('rel','stylesheet');
-    link.id="stylesMudiGeneral";
-    link.href=`https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeGlobalChile@latest/index.css`; /* Pueden tomarlos de esta ruta */
-   
+    link.setAttribute('rel', 'stylesheet');
+    link.id = "stylesMudiGeneral";
+    link.href = `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeGlobalChile@latest/index.css`; /* Pueden tomarlos de esta ruta */
+
     document.head.appendChild(link)
 };
 
-function createButon(father){
+function createButon(father) {
 
     /** We create a container for the 3D button */
-    const 
-    container       = document.createElement('DIV');
-    container.id    =`containerBtnsMudi`;
+    const
+        container = document.createElement('DIV');
+    container.id = `containerBtnsMudi`;
     container.classList.add(`ContainerBtnsMudi`);
 
-        /* We create an informative poster */
-        const 
-        tooltip     = document.createElement('P');
-        tooltip.id  = `tooltipMudi` ;
-        tooltip.classList.add(`mudiTooltip`);
-        tooltip.innerHTML=`<p class="paragraphMudi"><b class="newMudi">¡Nuevo!</b> Descubre como se ve este producto en <b>3D y realidad aumentada</b> en tu espacio</p>`;
-    
-        /** The 3D botton is an image */
-        const 
-        button3D    = document.createElement('IMG');
-        button3D.id = `btn3DProdId`;
-        button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeGlobalChile@latest/btn3D.png`;
-        button3D.classList.add(`btnMudi3D`);
-        button3D.classList.add(`animate-Shaking`);
-        button3D.addEventListener('click',createModal,false)
+    /* We create an informative poster */
+    const
+        tooltip = document.createElement('P');
+    tooltip.id = `tooltipMudi`;
+    tooltip.classList.add(`mudiTooltip`);
+    tooltip.innerHTML = `<p class="paragraphMudi"><b class="newMudi">¡Nuevo!</b> Descubre como se ve este producto en <b>3D y realidad aumentada</b> en tu espacio</p>`;
+
+    /** The 3D botton is an image */
+    const
+        button3D = document.createElement('IMG');
+    button3D.id = `btn3DProdId`;
+    button3D.src = `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeGlobalChile@latest/btn3D.png`;
+    button3D.classList.add(`btnMudi3D`);
+    button3D.classList.add(`animate-Shaking`);
+    button3D.addEventListener('click', createModal, false)
 
     /** Add tooltip and 3D buttton to "container" */
     container.appendChild(tooltip);
@@ -69,14 +70,14 @@ function createButon(father){
 
 };
 
-function createModal(){
+function createModal() {
 
     /** We create a shell for the MUDI modal */
-    const 
-    modalMudi = document.createElement('DIV');
-    modalMudi.id=`modalMudi`;
+    const
+        modalMudi = document.createElement('DIV');
+    modalMudi.id = `modalMudi`;
     modalMudi.classList.add(`mudiModal`);
-    modalMudi.innerHTML=`
+    modalMudi.innerHTML = `
         <div class="iframeMudi3D">
             <button class="closeModalMudi">X</button>
             <iframe class="modelMudi" src="${dataServer.URL_WEB}"></iframe>
@@ -85,14 +86,14 @@ function createModal(){
     `;
 
     /** We close the MUDI modal*/
-    modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
+    modalMudi.querySelector(`.closeModalMudi`).addEventListener('click', () => {
         document.body.querySelector('#modalMudi').remove();
     });
 
     /** Init ARExperience */
-    modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click',()=>{
-        if(window.innerWidth>1000) initARDESK();
-        else window.open(`${dataServer.URL_AR}`,"_BLANK")
+    modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click', () => {
+        if (window.innerWidth > 1000) initARDESK();
+        else window.open(`${dataServer.URL_AR}`, "_BLANK")
     });
 
     document.body.appendChild(modalMudi)
@@ -100,18 +101,18 @@ function createModal(){
 };
 
 
-function initARDESK(){
+function initARDESK() {
 
-    if(document.body.querySelector('#containerQR')) {
+    if (document.body.querySelector('#containerQR')) {
         document.body.querySelector('#containerQR').remove();
         return
     };
 
-    const 
-    modalMudi = document.createElement('DIV');
-    modalMudi.id=`containerQR`;
+    const
+        modalMudi = document.createElement('DIV');
+    modalMudi.id = `containerQR`;
     modalMudi.classList.add(`containerQRMudi`);
-    modalMudi.innerHTML=`
+    modalMudi.innerHTML = `
         <img class="mudiQR" src="${dataServer.URL_QR}" >
 
         <div class="containerText">
@@ -156,37 +157,32 @@ function initARDESK(){
 };
 
 
-async function mudiExperience({skuNumber,fatherContainer}){
+async function mudiExperience({ skuNumber, fatherContainer }) {
 
-    const 
-    dataServer = await conectServer(skuNumber);
+    const
+        dataServer = await conectServer(skuNumber);
 
-    
-    if(!dataServer){
+
+    if (!dataServer) {
         console.warn(`El SKU ${skuNumber} No posee experiencias de 3D y realidad aumentada`)
         return;
     };
 
     createStyles();
-    createButon( fatherContainer ); 
+    createButon(fatherContainer);
     dataLayer.push({
         event: "visualizacionMudi",
         valorMudi: "1"
-    });  
+    });
 };
 
 
-setTimeout(()=>{
+setTimeout(() => {
 
-    const finalSKUMabe      = document.querySelectorAll('.andes-table__column--value')[2].innerHTML;
-mudiExperience({
-    skuNumber:finalSKUMabe+'_MabeChile',
-    fatherContainer: window.innerWidth < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__col.col-2.ui-pdp--relative`)
-});
-    console.log('Hoooola')
+    const finalSKUMabe = document.querySelectorAll('.andes-table__column--value')[2].innerHTML;
+    mudiExperience({
+        skuNumber: finalSKUMabe + '_MabeChile',
+        fatherContainer: window.innerWidth < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-container__row`)
+    });
 
-    
-},2000)
-
-
-
+}, 2000)

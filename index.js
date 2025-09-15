@@ -182,7 +182,7 @@ setTimeout(() => {
     const finalSKUMabe = document.querySelectorAll('.andes-table__column--value')[2].innerHTML;
     mudiExperience({
         skuNumber: finalSKUMabe + '_MabeChile',
-        fatherContainer: window.innerWidth < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`div.ui-pdp-container__col.col-2.ui-pdp-container--column-left.pb-40.shops-pdp-container--column-left > div.ui-pdp-container__row`)
+        fatherContainer: window.innerWidth < 600 ? document.body.querySelector(`#gallery`) : document.body.querySelector(`.ui-pdp-gallery`)
     });
 
 }, 2000)
